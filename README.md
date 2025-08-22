@@ -7,35 +7,35 @@ This project demonstrates Spring Framework dependency injection and object manag
 
 Class Explanations :
 
-* Writer (interface)
+1.Writer (interface)
 
-Contracts a writing() method, implemented by writing tools (Pen, Pencil).
+* Contracts a writing() method, implemented by writing tools (Pen, Pencil).
 
-* Pen (implements Writer)
+2.Pen (implements Writer)
 
-1.Properties: color (String), price (int).
+* Properties: color (String), price (int).
 
-2.Implements writing() to print a message.
+* Implements writing() to print a message.
 
-3.Getters/setters for properties.
+* Getters/setters for properties.
 
-* Pencil (implements Writer)
+3.Pencil (implements Writer)
 
-Implements writing() to print a unique message indicating pencil use.
+* Implements writing() to print a unique message indicating pencil use.
 
-* Teacher
+4.Teacher
 
-1.Uses Lombok's @Data for boilerplate code.Properties: employeeid, Name, department.
+* Uses Lombok's @Data for boilerplate code.Properties: employeeid, Name, department.
 
-2.(Note: Field Name should conventionally be lowercase: name.)
+* (Note: Field Name should conventionally be lowercase: name.)
 
-* Student (extends Pen)
+5.Student (extends Pen)
 
-1.Core properties: name, age, pen (type: Pen), writer (type: Writer).
+* Core properties: name, age, pen (type: Pen), writer (type: Writer).
 
-2.Multiple constructors for flexibility (with or without Pen/Writer).
+* Multiple constructors for flexibility (with or without Pen/Writer).
 
-3.show() method prints the student's name and age, and calls writing() for both writer and pen.
+* show() method prints the student's name and age, and calls writing() for both writer and pen.
 
 
 Spring Integration : 
