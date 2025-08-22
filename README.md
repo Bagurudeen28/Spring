@@ -1,25 +1,36 @@
 Project Notes
+
 Overview
-This project demonstrates Spring Framework dependency injection and object management using Java classes representing a simple school scenario. The core entities are Student, Pen, Pencil, Teacher, and the interface Writer.Class Explanations
-Writer (interface)
+
+This project demonstrates Spring Framework dependency injection and object management using Java classes representing a simple school scenario. The core entities are Student, Pen, Pencil, Teacher, and the interface Writer.
+
+
+Class Explanations
+
+* Writer (interface)
+
 Contracts a writing() method, implemented by writing tools (Pen, Pencil).
 
-Pen (implements Writer)
+* Pen (implements Writer)
+
 Properties: color (String), price (int).
 
 Implements writing() to print a message.
 
 Getters/setters for properties.
 
-Pencil (implements Writer)
+* Pencil (implements Writer)
+
 Implements writing() to print a unique message indicating pencil use.
 
-Teacher
+* Teacher
+
 Uses Lombok's @Data for boilerplate code.Properties: employeeid, Name, department.
 
 (Note: Field Name should conventionally be lowercase: name.)
 
-Student (extends Pen)
+* Student (extends Pen)
+
 Core properties: name, age, pen (type: Pen), writer (type: Writer).
 
 Multiple constructors for flexibility (with or without Pen/Writer).
@@ -27,6 +38,7 @@ Multiple constructors for flexibility (with or without Pen/Writer).
 show() method prints the student's name and age, and calls writing() for both writer and pen.
 
 Spring Integration
+
 Beans are configured in XML, allowing for property and constructor-based injection.
 
 Both Pen and Pencil are recognized by Spring as beans, and injected as dependencies where needed.
@@ -34,6 +46,7 @@ Both Pen and Pencil are recognized by Spring as beans, and injected as dependenc
 Student can be wired with different writers and pens, highlighting dependency injection benefits.
 
 Best Practices Observed
+
 Interface-driven design: Writer ensures a consistent contract for writing tools.
 
 Use of Lombok: Reduces boilerplate in Teacher class.
