@@ -1,0 +1,11 @@
+package org.example;
+
+import lombok.Data;
+
+@Data
+public class Teacher {
+
+    int employeeid;
+    String Name;
+    String department;
+}

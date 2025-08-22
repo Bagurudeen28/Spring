@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <bean id="std1"  class="org.example.Student">
+        <property name="name" value="Bagurudeen S"/>
+        <property name="age" value="22"/>
+        <!--                <property name="pen" ref="pen1"/>-->
+        <!--                <property name="writer" ref="pc1"/>-->
+    </bean>
+
+
+    <bean id="std2"  class="org.example.Student" autowire="byType">
+    </bean>
+
+
+    <bean id="pen" class="org.example.Pen">
+        <property name="color" value="white"/>
+        <property name="price" value="10"/>
+    </bean>
+
+    <bean id="pen1" class="org.example.Pen" primary="true">
+        <property name="color" value="Black"/>
+        <property name="price" value="20"/>
+    </bean>
+
+    <bean id="writer" class="org.example.Pencil"/>
+
+    <!--        <bean id="Writer" class="org.example.Writer">-->
+    <!--        </bean>-->
+
+    <bean id="std3" class="org.example.Student" autowire="byName" >
+        <constructor-arg index="0" value="Mainkandan"/>
+        <constructor-arg index="1" value="23"/>
+<!--                        <constructor-arg index="2" ref="pen1"/>-->
+        <!--                <constructor-arg index="3" ref="writer"/>-->
+    </bean>
+
+</beans>
